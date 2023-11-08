@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Stats
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Disk space
+        run: df -h 
+
+      - name: CPU info
+        run: cat /proc/cpuinfo
+
+      - name: Memory info
+        run: free -m 
+
